@@ -120,6 +120,7 @@ body{
     text-align: center;
     line-height: 40px;
     font-size: 25px;
+    margin-right: 5px;
 }
 .pisca{
     animation-name: pisca;
@@ -139,4 +140,10 @@ body{
    width: 90px;
 }
 
+.aviso--grande{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
 
