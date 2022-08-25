@@ -25,15 +25,16 @@
       },
           {
             titulo: 'PREFEITO',
-            numero: '99',
+            numeros: '2',
             candidatos:[
               {
             nome: 'Ciclano',
+            numero: '99',
             partido: 'ABC',
             vice: 'Cic',
             fotos: [
             {url: '99.jpg', legenda: 'perfeito'},
-            {url: '99_2.jpg', leguenda: 'Vice-prefeito', small: false}
+            {url: '99_2.jpg', legenda: 'Vice-prefeito', small: false}
             ]
           },
           {
@@ -42,8 +43,8 @@
             partido: 'QWERTY',
             vice: 'Zul',
             fotos: [
-              {url: '84.jpg', leguenda: 'Prefeito'},
-              {url: '84.2.jpg', leguenda: 'Vice-prefeito'}
+              {url: '84.jpg', legenda: 'Prefeito'},
+              {url: '84.2.jpg', legenda: 'Vice-prefeito'}
             ]
           },
         ]

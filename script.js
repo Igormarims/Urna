@@ -7,11 +7,14 @@ let numeros = document.querySelector('.d-1-3');
 
 let etapaAtual = 0;
 let numero = '';
+let votoBranco = false;
 
 
-(function comecarEtapa(){
+function comecarEtapa(){
     let etapa = etapas[etapaAtual];
-     
+    numero = "";
+    votoBranco = false;
+
     let  numeroHtml = '';
     for(let i = 0; i < etapa.numeros; i++){
         if(i === 0){
@@ -29,7 +32,7 @@ let numero = '';
     numeros.innerHTML = numeroHtml;
 
 
-}());
+};
    
 function atualizarIterface(){
     let etapa = etapas[etapaAtual];
@@ -58,6 +61,7 @@ function atualizarIterface(){
       }else {
         seuVotoPara.style.display ='block';
         descricao.innerHTML = '<div class="aviso--grande pisca">VOTO NULO</div>'
+        aviso.style.display = "block"
 
       }
 }
@@ -80,14 +84,43 @@ function clicou(n) {
 }
 
 function branco(){
+    if(numero === ""){
+        votoBranco = true;
+        seuVotoPara.style.display ='block';
+        aviso.style.display = "block"
+        numeros.innerHTML = " ";
+        descricao.innerHTML = '<div class="aviso--grande pisca">VOTO EM BRANCO</div>'
+        }else {
+            alert('Para votar em BRANCO, não pode ter digitado nenhum número !')
+        }
 
 }
 
 function corrige(){
+    
 
+    comecarEtapa();
 }
 
 function confirma(){
+    let etapa = etapas[etapaAtual];
+    let votoConfirmado = false;
+   if(votoBranco == true){
+        console.log('Confirmando voto em BRANCO!');
+        votoConfirmado = true;
+   }else if(numero.length === etapa.numeros){
+        console.log('Confirmando o voto '+ numero)
+        votoConfirmado = true;
+   }
+    
+   if(votoConfirmado){
+        etapaAtual++;
+        if(etapas[etapaAtual] !== undefined){
+            comecarEtapa();
+        }
+   }
+
 
 }
 
+comecarEtapa();
